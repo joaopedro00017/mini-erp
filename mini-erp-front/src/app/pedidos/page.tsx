@@ -218,33 +218,25 @@ export default function PedidosPage() {
                         <TableCell className="text-right">
                           <div className="flex items-center justify-end gap-1">
                             <Tooltip>
-                              <TooltipTrigger>
-                                <Button
-                                  variant="ghost"
-                                  size="icon"
-                                  onClick={() => {
-                                    setPedidoSelecionado(pedido);
-                                    setIsModalDetalhesAberto(true);
-                                  }}
-                                  className="text-slate-400 hover:text-slate-700 dark:text-zinc-500 dark:hover:text-zinc-200"
-                                >
-                                  <Eye className="h-4 w-4" />
-                                </Button>
+                              <TooltipTrigger
+                                onClick={() => {
+                                  setPedidoSelecionado(pedido);
+                                  setIsModalDetalhesAberto(true);
+                                }}
+                                className="text-slate-400 hover:text-slate-700 dark:text-zinc-500 dark:hover:text-zinc-200"
+                              >
+                                <Eye className="h-4 w-4" />
                               </TooltipTrigger>
                               <TooltipContent>Ver Detalhes</TooltipContent>
                             </Tooltip>
 
                             {pedido.status === "RASCUNHO" && (
                               <Tooltip>
-                                <TooltipTrigger>
-                                  <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    onClick={() => handlePagar(pedido)}
-                                    className="text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:text-zinc-500 dark:hover:text-emerald-400 dark:hover:bg-emerald-950/40"
-                                  >
-                                    <Check className="h-4 w-4" />
-                                  </Button>
+                                <TooltipTrigger
+                                  onClick={() => handlePagar(pedido)}
+                                  className="text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:text-zinc-500 dark:hover:text-emerald-400 dark:hover:bg-emerald-950/40"
+                                >
+                                  <Check className="h-4 w-4" />
                                 </TooltipTrigger>
                                 <TooltipContent>
                                   Confirmar Pagamento
@@ -255,18 +247,14 @@ export default function PedidosPage() {
                             {pedido.status !== "CANCELADO" &&
                               pedido.status !== "PAGO" && (
                                 <Tooltip>
-                                  <TooltipTrigger>
-                                    <Button
-                                      variant="ghost"
-                                      size="icon"
-                                      onClick={() => {
-                                        setPedidoSelecionado(pedido);
-                                        setIsModalCancelarAberto(true);
-                                      }}
-                                      className="text-slate-400 hover:text-red-600 hover:bg-red-50 dark:text-zinc-500 dark:hover:text-red-400 dark:hover:bg-red-950/40"
-                                    >
-                                      <X className="h-4 w-4" />
-                                    </Button>
+                                  <TooltipTrigger
+                                    onClick={() => {
+                                      setPedidoSelecionado(pedido);
+                                      setIsModalCancelarAberto(true);
+                                    }}
+                                    className="text-slate-400 hover:text-red-600 hover:bg-red-50 dark:text-zinc-500 dark:hover:text-red-400 dark:hover:bg-red-950/40"
+                                  >
+                                    <X className="h-4 w-4" />
                                   </TooltipTrigger>
                                   <TooltipContent>
                                     Cancelar Pedido

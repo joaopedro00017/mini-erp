@@ -158,6 +158,7 @@ export default function NovoPedidoPage() {
       </div>
 
       {/* 1. Seleção de Cliente */}
+      {/* 1. Seleção de Cliente */}
       <Card>
         <CardHeader>
           <CardTitle className="text-base text-slate-900 dark:text-zinc-100">
@@ -170,16 +171,24 @@ export default function NovoPedidoPage() {
               Selecione o cliente
             </Label>
             <Select
-              value={clienteSelecionado}
+              key={clienteSelecionado || "cliente-vazio"}
+              value={clienteSelecionado || ""}
               onValueChange={setClienteSelecionado}
               disabled={carregando}
             >
               <SelectTrigger id="cliente" className="w-full">
-                <SelectValue placeholder="Selecione um cliente..." />
+                <SelectValue placeholder="Selecione um cliente...">
+                  {clientes.find(
+                    (c) => String(c.id) === String(clienteSelecionado),
+                  )?.nome || "Selecione um cliente..."}
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
                 {clientes.map((cliente) => (
-                  <SelectItem key={cliente.id} value={cliente.id}>
+                  <SelectItem
+                    key={String(cliente.id)}
+                    value={String(cliente.id)}
+                  >
                     {cliente.nome}
                   </SelectItem>
                 ))}
@@ -203,7 +212,9 @@ export default function NovoPedidoPage() {
                 Produto
               </Label>
               <Select
-                value={produtoAtual.produtoId}
+                // 🌟 Crucial aqui: Como limpamos o seletor após adicionar o item, o "produto-limpo" força o reset visual do componente
+                key={produtoAtual.produtoId || "produto-limpo"}
+                value={produtoAtual.produtoId || ""}
                 onValueChange={(valor) =>
                   setProdutoAtual((preview) => ({
                     ...preview,
@@ -213,11 +224,19 @@ export default function NovoPedidoPage() {
                 disabled={carregando}
               >
                 <SelectTrigger id="produto" className="mt-1 w-full">
-                  <SelectValue placeholder="Selecione um produto..." />
+                  {/* 🌟 BLINDAGEM VISUAL: Garante que exiba o nome do produto selecionado mesmo durante mutações de estado */}
+                  <SelectValue placeholder="Selecione um produto...">
+                    {produtos.find(
+                      (p) => String(p.id) === String(produtoAtual.produtoId),
+                    )?.nome || "Selecione um produto..."}
+                  </SelectValue>
                 </SelectTrigger>
                 <SelectContent>
                   {produtos.map((produto) => (
-                    <SelectItem key={produto.id} value={produto.id}>
+                    <SelectItem
+                      key={String(produto.id)}
+                      value={String(produto.id)}
+                    >
                       {produto.nome}
                     </SelectItem>
                   ))}

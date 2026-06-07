@@ -252,7 +252,7 @@ export default function CategoriasPage() {
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="grid gap-2">
-              <Label htmlFor="nome">Nome</Label>
+              <Label htmlFor="nome">Nome*</Label>
               <Input
                 id="nome"
                 value={novoNome}
@@ -308,7 +308,7 @@ export default function CategoriasPage() {
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="grid gap-2">
-              <Label htmlFor="nomeEdicao">Nome</Label>
+              <Label htmlFor="nomeEdicao">Nome*</Label>
               <Input
                 id="nomeEdicao"
                 value={nomeEdicao}

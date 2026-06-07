@@ -296,7 +296,7 @@ export default function ClientesPage() {
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="grid gap-2">
-              <Label htmlFor="nome">Nome Completo</Label>
+              <Label htmlFor="nome">Nome Completo*</Label>
               <Input
                 id="nome"
                 value={novoNome}
@@ -304,7 +304,7 @@ export default function ClientesPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="email">E-mail</Label>
+              <Label htmlFor="email">E-mail*</Label>
               <Input
                 id="email"
                 type="email"
@@ -313,7 +313,7 @@ export default function ClientesPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="cpfCnpj">CPF ou CNPJ</Label>
+              <Label htmlFor="cpfCnpj">CPF ou CNPJ*</Label>
               <Input
                 id="cpfCnpj"
                 value={novoCpfCnpj}
@@ -368,7 +368,7 @@ export default function ClientesPage() {
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="grid gap-2">
-              <Label htmlFor="nomeEdicao">Nome Completo</Label>
+              <Label htmlFor="nomeEdicao">Nome Completo*</Label>
               <Input
                 id="nomeEdicao"
                 value={nomeEdicao}
@@ -376,7 +376,7 @@ export default function ClientesPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="emailEdicao">E-mail</Label>
+              <Label htmlFor="emailEdicao">E-mail*</Label>
               <Input
                 id="emailEdicao"
                 type="email"
@@ -385,7 +385,7 @@ export default function ClientesPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="cpfCnpjEdicao">CPF ou CNPJ</Label>
+              <Label htmlFor="cpfCnpjEdicao">CPF ou CNPJ*</Label>
               <Input
                 id="cpfCnpjEdicao"
                 value={cpfCnpjEdicao}

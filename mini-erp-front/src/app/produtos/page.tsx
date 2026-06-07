@@ -376,7 +376,7 @@ export default function ProdutosPage() {
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="grid gap-2">
-              <Label htmlFor="nomeEdicao">Nome do Produto</Label>
+              <Label htmlFor="nomeEdicao">Nome do Produto*</Label>
               <Input
                 id="nomeEdicao"
                 value={nomeEdicao}
@@ -384,7 +384,7 @@ export default function ProdutosPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label>Categoria</Label>
+              <Label>Categoria*</Label>
               <Select
                 key={produtoSelecionado?.id}
                 value={categoriaIdEdicao}
@@ -412,7 +412,7 @@ export default function ProdutosPage() {
               </Select>
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="precoEdicao">Preço</Label>
+              <Label htmlFor="precoEdicao">Preço*</Label>
               <Input
                 id="precoEdicao"
                 type="number"
@@ -422,7 +422,7 @@ export default function ProdutosPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="estoqueEdicao">Estoque</Label>
+              <Label htmlFor="estoqueEdicao">Estoque*</Label>
               <Input
                 id="estoqueEdicao"
                 type="number"
@@ -431,7 +431,9 @@ export default function ProdutosPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="estoqueMinimoEdicao">Estoque Mínimo</Label>
+              <Label htmlFor="estoqueMinimoEdicao">
+                Estoque Mínimo (Opcional)
+              </Label>
               <Input
                 id="estoqueMinimoEdicao"
                 type="number"
@@ -469,7 +471,7 @@ export default function ProdutosPage() {
           </DialogHeader>
           <div className="space-y-4 py-2">
             <div className="grid gap-2">
-              <Label htmlFor="novoNome">Nome do Produto</Label>
+              <Label htmlFor="novoNome">Nome do Produto*</Label>
               <Input
                 id="novoNome"
                 value={novoNome}
@@ -477,7 +479,7 @@ export default function ProdutosPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label>Categoria</Label>
+              <Label>Categoria*</Label>
               <Select
                 value={novaCategoriaId}
                 onValueChange={(v) => setNovaCategoriaId(v ?? "")}
@@ -498,7 +500,7 @@ export default function ProdutosPage() {
               </Select>
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="novoPreco">Preço</Label>
+              <Label htmlFor="novoPreco">Preço*</Label>
               <Input
                 id="novoPreco"
                 type="number"
@@ -509,7 +511,7 @@ export default function ProdutosPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="novoEstoque">Estoque</Label>
+              <Label htmlFor="novoEstoque">Estoque*</Label>
               <Input
                 id="novoEstoque"
                 type="number"
@@ -519,7 +521,9 @@ export default function ProdutosPage() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="novoEstoqueMinimo">Estoque Mínimo</Label>
+              <Label htmlFor="novoEstoqueMinimo">
+                Estoque Mínimo (Opcional)
+              </Label>
               <Input
                 id="novoEstoqueMinimo"
                 type="number"
