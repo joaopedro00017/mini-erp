@@ -1,13 +1,13 @@
 <div align="center">
 
-# Mini-ERP
+# 📦 Mini-ERP - Sistema de Gestão Integrada
 
-**Sistema de gestão empresarial full-stack com backend artesanal em Spring Boot e frontend moderno em Next.js.**
+**Aplicação full-stack de gerenciamento interno voltada para o controle e fluxo comercial de empresas, englobando a gestão de produtos, categorias, clientes e a emissão complexa de pedidos de venda com múltiplos itens.**
 
-[![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.6-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Latest-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
@@ -15,68 +15,17 @@
 
 ---
 
-## 📸 Demonstração (Screenshots)
+## ✨ Funcionalidades
 
-> **Instrução para o desenvolvedor:** Para exibir as screenshots abaixo, crie uma pasta chamada `screenshots/` na **raiz** do projeto (ao lado das pastas `mini-erp/` e `mini-erp-front/`) e salve os seus prints com **exatamente** os nomes listados:
->
-> | Nome do ficheiro | O que deve mostrar |
-> |---|---|
-> | `screenshots/dashboard.png` | Métricas e gráficos da página inicial (Dashboard) |
-> | `screenshots/produtos-desktop.png` | Listagem e filtros de produtos em ecrãs grandes |
-> | `screenshots/pedidos-mobile.png` | O modal/cards de pedidos responsivo simulado num telemóvel |
+- **Gestão de Pedidos Inteligente** — Emissão de pedidos com múltiplos itens, cálculo automático de subtotais e valor total, e controle de fluxo de status (`RASCUNHO → PAGO / CANCELADO`), com máquina de estados robusta protegida por regras de negócio transacionais.
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <strong>Dashboard</strong><br/><br/>
-      <img src="screenshots/dashboard.png" alt="Dashboard com métricas e gráficos" width="100%"/>
-    </td>
-    <td align="center" width="50%">
-      <strong>Gestão de Produtos (Desktop)</strong><br/><br/>
-      <img src="screenshots/produtos-desktop.png" alt="Listagem e filtros de produtos" width="100%"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <strong>Pedidos (Mobile)</strong><br/><br/>
-      <img src="screenshots/pedidos-mobile.png" alt="Cards de pedidos em modo mobile" width="48%"/>
-    </td>
-  </tr>
-</table>
+- **Painel de Métricas (Dashboard)** — Cards analíticos em tempo real de Faturamento Total, Volume de Pedidos e Ticket Médio, acompanhados de um painel crítico de **Alertas de Reposição de Estoque**, sinalizando produtos abaixo do mínimo cadastrado.
 
----
+- **Catálogo de Produtos e Categorias** — Organização de produtos com controle rígido de estoque mínimo, preços e categorização relacional com integridade referencial garantida pelo banco de dados.
 
-## 📖 Sobre o Projeto
+- **Engenharia de Responsividade Avançada** — Layout adaptativo que converte tabelas ricas do desktop em mini-cards empilhados no mobile, garantindo usabilidade plena em qualquer tamanho de tela.
 
-O **Mini-ERP** é um sistema de gestão empresarial completo desenvolvido como demonstração de competência técnica full-stack. O sistema abrange o ciclo de vida completo de um negócio: gestão de produtos com controlo de estoque, cadastro de clientes com CPF/CNPJ, criação de pedidos com cálculo automático de total e uma máquina de estados robusta (`RASCUNHO → PAGO / CANCELADO`), além de controlo de categorias.
-
-A interface oferece suporte total a **Light Mode e Dark Mode**, é totalmente **responsiva** e foi construída com foco em acessibilidade e consistência visual.
-
----
-
-## 🤖 Abordagem de Engenharia: IA Focada vs. Artesanato Manual
-
-> Esta secção é fundamental para compreender as escolhas técnicas do projeto.
-
-### Frontend — Produtividade Acelerada com IA
-
-O uso de Inteligência Artificial foi **deliberadamente restrito e focado** ao ecossistema de Frontend. A IA atuou como uma ferramenta de **aceleração**, não de substituição de raciocínio, sendo utilizada para:
-
-- **Prototipagem rápida** de layouts e estrutura de componentes em Next.js e TypeScript.
-- **Consistência de temas** — garantindo que tokens de cores e classes do Tailwind CSS v4 se aplicassem corretamente tanto no Light quanto no Dark Mode.
-- **Componentes acessíveis** via Shadcn/ui, como `AlertDialog` para ações destrutivas (ex: cancelar pedido) e `Sonner` para notificações não-intrusivas.
-- **Adaptação cirúrgica de responsividade mobile**, como a conversão de tabelas pesadas em cards empilhados para ecrãs pequenos.
-
-### Backend — 100% Artesanal e o Principal Foco de Avaliação
-
-O verdadeiro coração técnico do projeto é o **Backend**. Todo o ecossistema em Java 21 com Spring Boot foi **desenvolvido de forma 100% manual**, sem assistência de IA, para demonstrar profundidade e solidez em:
-
-- **Arquitetura em camadas** limpa: `Controller → Service → Repository → Domain`
-- **Design Patterns**: DTO (Data Transfer Object) implementado com Java Records para Request/Response, separando completamente o contrato da API do modelo de persistência
-- **Regras de negócio complexas**: validação transacional de estoque (com `@Transactional`), cálculo automático do valor total do pedido, e estorno de estoque no cancelamento
-- **Máquina de estados**: um pedido só pode ser pago se estiver em `RASCUNHO`; um pedido cancelado não pode ser cancelado novamente — tudo protegido por `BusinessException`
-- **Tratamento global de exceções** (`@RestControllerAdvice`) com respostas padronizadas para 5 categorias de erro
-- **Segurança e configuração**: blindagem completa de credenciais via variáveis de ambiente e CORS centralizado
+- **Modo Escuro / Claro Nativo** — Alternância fluida entre temas com persistência de preferência, sem flash de conteúdo não estilizado (FOUC).
 
 ---
 
@@ -84,141 +33,268 @@ O verdadeiro coração técnico do projeto é o **Backend**. Todo o ecossistema 
 
 ### Backend (`mini-erp/`)
 
-| Tecnologia | Versão | Função |
-|---|---|---|
-| Java | 21 | Linguagem principal |
-| Spring Boot | 4.0.6 | Framework base |
-| Spring Web MVC | — | Camada de controllers REST |
-| Spring Data JPA | — | Abstração de repositórios |
-| Hibernate | — | ORM / mapeamento entidade-tabela |
-| Spring Validation | — | Bean Validation (`@NotBlank`, `@Positive`, etc.) |
-| PostgreSQL Driver | — | Conector JDBC para o banco de dados |
-| Lombok | — | Eliminação de boilerplate (`@Data`, `@RequiredArgsConstructor`) |
-| Maven | — | Gerenciamento de dependências e build |
+| Tecnologia      | Versão | Função                                                          |
+| --------------- | ------ | --------------------------------------------------------------- |
+| Java            | 17     | Linguagem principal                                             |
+| Spring Boot     | 3.x    | Framework base e auto-configuração                              |
+| Spring Data JPA | —      | Abstração de repositórios e consultas                           |
+| Hibernate       | —      | ORM / mapeamento entidade-tabela                                |
+| PostgreSQL      | Latest | Banco de dados relacional                                       |
+| Maven           | —      | Gerenciamento de dependências e build                           |
+| Lombok          | —      | Eliminação de boilerplate (`@Data`, `@RequiredArgsConstructor`) |
+| UUID            | —      | Identificadores únicos universais para entidades                |
 
 ### Frontend (`mini-erp-front/`)
 
-| Tecnologia | Versão | Função |
-|---|---|---|
-| Next.js | 16.2.6 | Framework React (App Router) |
-| React | 19.2.4 | Biblioteca de UI |
-| TypeScript | 5 | Tipagem estática |
-| Tailwind CSS | v4 | Estilização utility-first |
-| Shadcn/ui | 4.8.3 | Componentes acessíveis e estilizáveis |
-| Axios | 1.16.1 | Cliente HTTP para consumo da API |
-| Sonner | 2.0.7 | Notificações toast |
-| next-themes | 0.4.6 | Alternância Light/Dark Mode |
-| Lucide React | — | Biblioteca de ícones SVG |
+| Tecnologia           | Versão          | Função                                             |
+| -------------------- | --------------- | -------------------------------------------------- |
+| Next.js              | 15 (App Router) | Framework React com roteamento baseado em arquivos |
+| React                | 19              | Biblioteca de UI com Server e Client Components    |
+| TypeScript           | 5               | Tipagem estática e contratos de dados              |
+| Tailwind CSS         | v4              | Estilização utility-first                          |
+| Shadcn/ui (Radix UI) | —               | Componentes acessíveis e altamente customizáveis   |
+| Lucide React         | —               | Biblioteca de ícones SVG coerentes e leves         |
+| Sonner               | —               | Notificações toast não intrusivas                  |
 
 ---
 
-## 🏗️ Engenharia e Boas Práticas
-
-### Arquitetura do Backend
+## 🏗️ Diagrama de Arquitetura
 
 ```
-mini-erp/src/main/java/com/soujoaopedro/mini_erp/
-├── controller/      # Endpoints REST (Produto, Pedido, Cliente, Categoria)
-├── service/         # Regras de negócio e transações
-├── repository/      # Interfaces Spring Data JPA
-├── domain/          # Entidades JPA e Enums
-├── dto/             # Records de Request e Response (contrato da API)
-├── exception/       # Hierarquia de exceções e GlobalExceptionHandler
-└── config/          # CorsConfig (segurança de origem)
+┌─────────────────────────────────────────────────────────────────┐
+│                   FRONTEND — localhost:3000                      │
+│                      (Next.js 15 / React 19)                    │
+│                                                                  │
+│   Dashboard  │  Produtos  │  Pedidos  │  Clientes  │ Categorias  │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │
+                               │  HTTP/REST  ·  JSON
+                               │  CORS centralizado (CorsConfig.java)
+                               │
+                               │  GET  /api/produtos
+                               │  POST /api/produtos
+                               │  GET  /api/pedidos
+                               │  POST /api/pedidos
+                               │  PUT  /api/pedidos/{id}
+                               │  DELETE /api/pedidos/{id}
+                               │
+┌──────────────────────────────▼──────────────────────────────────┐
+│                  BACKEND — localhost:8080                        │
+│                 (Spring Boot · Maven · Java 17)                  │
+│                                                                  │
+│  ┌─────────────┐    ┌─────────────┐    ┌──────────────────────┐ │
+│  │  Controller │───▶│   Service   │───▶│     Repository       │ │
+│  │  (REST API) │    │ (Regras de  │    │  (Spring Data JPA)   │ │
+│  │             │◀───│  Negócio)   │◀───│                      │ │
+│  └─────────────┘    └─────────────┘    └──────────┬───────────┘ │
+│                                                   │             │
+│  ┌────────────────────────────────────────────────▼───────────┐ │
+│  │              Domain (Entidades JPA + Enums)                 │ │
+│  │  Produto · Pedido · PedidoItem · Cliente · Categoria       │ │
+│  └────────────────────────────────────────────────────────────┘ │
+└──────────────────────────────┬──────────────────────────────────┘
+                               │
+                               │  JDBC / Hibernate ORM
+                               │
+┌──────────────────────────────▼──────────────────────────────────┐
+│               BANCO DE DADOS — PostgreSQL                        │
+│                    (database: mini-erp)                          │
+│                                                                  │
+│   produtos · pedidos · pedido_itens · clientes · categorias     │
+└─────────────────────────────────────────────────────────────────┘
 ```
-
-### Tratamento Global de Exceções
-
-O `GlobalExceptionHandler` (`@RestControllerAdvice`) intercepta e padroniza **todas** as respostas de erro da API, retornando sempre um objeto `StandardError` com timestamp, status HTTP, título e mensagem.
-
-| Exceção | Status HTTP | Cenário |
-|---|---|---|
-| `ResourceNotFoundException` | `404 Not Found` | Entidade não encontrada por ID |
-| `BusinessException` | `422 Unprocessable Entity` | Regra de negócio violada (ex: estoque insuficiente) |
-| `MethodArgumentNotValidException` | `400 Bad Request` | Falha na validação de campos do DTO |
-| `DataIntegrityViolationException` | `400 Bad Request` | Violação de FK (ex: deletar categoria com produtos) |
-| `Exception` | `500 Internal Server Error` | Fallback genérico — mensagem amigável, sem vazar stack traces |
-
-### Blindagem de Dados Sensíveis
-
-Nenhuma credencial é hardcoded no código-fonte. Todas as configurações sensíveis são lidas via variáveis de ambiente:
-
-```properties
-# application.properties
-spring.datasource.url=${DB_URL}
-spring.datasource.username=${DB_USERNAME}
-spring.datasource.password=${DB_PASSWORD}
-cors.allowed-origins=${CORS_ALLOWED_ORIGINS:http://localhost:3000}
-```
-
-### CORS Centralizado
-
-A política de CORS está em `CorsConfig.java`, lendo a lista de origens permitidas da variável `CORS_ALLOWED_ORIGINS`. Nenhum `@CrossOrigin` existe nos controllers, evitando configurações dispersas e inconsistentes.
-
-### Boas Práticas no Frontend
-
-- **Keys dinâmicas em seletores**: Chaves de componentes (`key`) atualizadas dinamicamente para forçar re-renderização e evitar bugs de cache visual em formulários.
-- **`AlertDialog` para ações críticas**: Ações destrutivas (cancelar pedido) usam o componente `AlertDialog` do Shadcn, exigindo confirmação explícita do utilizador.
-- **Variável de ambiente tipada**: `NEXT_PUBLIC_API_URL` centraliza a URL da API, com `.env.example` commitado como documentação e `.env.local` no `.gitignore`.
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🔌 Documentação da API (Exemplos Práticos)
+
+### `GET /api/produtos` — Listar Produtos
+
+Retorna todos os produtos cadastrados, incluindo o objeto de categoria aninhado e os dados de controle de estoque.
+
+**Response `200 OK`:**
+
+```json
+[
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "nome": "Notebook Pro 15",
+    "preco": 4599.9,
+    "estoque": 12,
+    "estoqueMinimo": 5,
+    "categoria": {
+      "id": "f9e8d7c6-b5a4-3210-fedc-ba9876543210",
+      "nome": "Eletrônicos"
+    }
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "nome": "Mouse Ergonômico",
+    "preco": 189.9,
+    "estoque": 3,
+    "estoqueMinimo": 10,
+    "categoria": {
+      "id": "f9e8d7c6-b5a4-3210-fedc-ba9876543210",
+      "nome": "Eletrônicos"
+    }
+  }
+]
+```
+
+> **Alerta de Reposição:** Produtos onde `estoque < estoqueMinimo` são destacados automaticamente no Dashboard como itens críticos.
+
+---
+
+### `POST /api/pedidos` — Criar Pedido
+
+Cria um novo pedido em status `RASCUNHO`. O backend valida o estoque de cada item, calcula o subtotal por linha e o valor total do pedido de forma transacional.
+
+**Request Body:**
+
+```json
+{
+  "clienteId": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+  "itens": [
+    {
+      "produtoId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "quantidade": 2
+    },
+    {
+      "produtoId": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "quantidade": 1
+    }
+  ]
+}
+```
+
+**Response `201 Created`:**
+
+```json
+{
+  "id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+  "status": "RASCUNHO",
+  "valorTotal": 9389.7,
+  "cliente": {
+    "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "nome": "Empresa XYZ Ltda."
+  },
+  "itens": [
+    {
+      "produtoId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "nomeProduto": "Notebook Pro 15",
+      "quantidade": 2,
+      "precoUnitario": 4599.9,
+      "subtotal": 9199.8
+    },
+    {
+      "produtoId": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "nomeProduto": "Mouse Ergonômico",
+      "quantidade": 1,
+      "precoUnitario": 189.9,
+      "subtotal": 189.9
+    }
+  ]
+}
+```
+
+### Tabela Completa de Endpoints
+
+| Método   | Endpoint             | Descrição                             |
+| -------- | -------------------- | ------------------------------------- |
+| `GET`    | `/api/produtos`      | Lista todos os produtos com categoria |
+| `POST`   | `/api/produtos`      | Cadastra novo produto                 |
+| `PUT`    | `/api/produtos/{id}` | Atualiza produto existente            |
+| `DELETE` | `/api/produtos/{id}` | Remove produto (valida integridade)   |
+| `GET`    | `/api/pedidos`       | Lista todos os pedidos                |
+| `POST`   | `/api/pedidos`       | Cria pedido com validação de estoque  |
+| `PUT`    | `/api/pedidos/{id}`  | Atualiza pedido em `RASCUNHO`         |
+| `DELETE` | `/api/pedidos/{id}`  | Cancela pedido e restaura estoque     |
+| `GET`    | `/api/clientes`      | Lista todos os clientes               |
+| `POST`   | `/api/clientes`      | Cadastra novo cliente                 |
+| `GET`    | `/api/categorias`    | Lista todas as categorias             |
+| `POST`   | `/api/categorias`    | Cadastra nova categoria               |
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+mini-erp/                          # Workspace raiz (monorepo)
+│
+├── mini-erp/                      # Módulo Backend — Spring Boot
+│   └── src/main/java/com/.../
+│       ├── controller/            # Endpoints REST (Produto, Pedido, Cliente, Categoria)
+│       ├── domain/                # Entidades JPA, Enums (StatusPedido) e relacionamentos
+│       ├── dto/                   # Records de Request/Response (contrato da API)
+│       ├── exception/             # Hierarquia de exceções e GlobalExceptionHandler
+│       ├── repository/            # Interfaces Spring Data JPA
+│       └── service/               # Regras de negócio, cálculos e transações
+│
+└── mini-erp-front/                # Módulo Frontend — Next.js 15
+    └── src/app/
+        ├── (pages)/               # Rotas do App Router (dashboard, produtos, pedidos...)
+        ├── components/            # Componentes reutilizáveis (tabelas, cards, modais)
+        └── lib/                   # Clientes HTTP, utilitários e tipagens TypeScript
+```
+
+---
+
+## 🚀 Como Executar Localmente
 
 ### Pré-requisitos
 
-- Java 21+
+- Java 17+
 - Maven 3.x
-- PostgreSQL rodando localmente (ou via Docker)
+- PostgreSQL rodando localmente
 - Node.js 20+ e npm
 
 ---
 
-### 1. Backend (Spring Boot)
+### 1. Banco de Dados
 
-**1.1. Configure o banco de dados PostgreSQL**
+Crie o banco de dados no PostgreSQL:
 
-Crie um banco de dados no seu PostgreSQL:
 ```sql
-CREATE DATABASE mini_erp;
+CREATE DATABASE "mini-erp";
 ```
 
-**1.2. Configure as variáveis de ambiente**
+---
 
-No terminal (PowerShell) antes de executar o Maven, exporte as variáveis:
+### 2. Backend (Spring Boot)
+
+**Configure as variáveis de ambiente** na sessão do terminal antes de executar:
 
 ```powershell
-$env:DB_URL      = "jdbc:postgresql://localhost:5432/mini_erp"
+# PowerShell
+$env:DB_URL      = "jdbc:postgresql://localhost:5432/mini-erp"
 $env:DB_USERNAME = "seu_usuario_postgres"
 $env:DB_PASSWORD = "sua_senha_postgres"
 $env:CORS_ALLOWED_ORIGINS = "http://localhost:3000"
 ```
 
-Ou crie um ficheiro `.env` e use uma ferramenta como `dotenv-maven-plugin` — mas a forma mais simples é exportar as variáveis na sessão atual do terminal.
+> **Segurança:** Nenhuma credencial está hardcoded no código-fonte. O `application.properties` usa exclusivamente referências dinâmicas a variáveis de ambiente (`${DB_PASSWORD}`, `${DB_URL}`, etc.), garantindo que o projeto seja seguro para hospedagem em nuvem e repositórios públicos.
 
-**1.3. Execute o backend**
+**Execute o backend:**
 
 ```bash
 cd mini-erp
 ./mvnw spring-boot:run
 ```
 
-O servidor iniciará em `http://localhost:8080`. O Hibernate criará as tabelas automaticamente no primeiro run (DDL automático via `spring.jpa.hibernate.ddl-auto`).
+O servidor iniciará em `http://localhost:8080`. O Hibernate criará as tabelas automaticamente no primeiro run via DDL automático.
 
 ---
 
-### 2. Frontend (Next.js)
+### 3. Frontend (Next.js)
 
-**2.1. Configure a URL da API**
-
-Dentro da pasta `mini-erp-front/`, crie o ficheiro `.env.local`:
+**Crie o arquivo `.env.local`** dentro da pasta `mini-erp-front/`:
 
 ```bash
 # mini-erp-front/.env.local
 NEXT_PUBLIC_API_URL=http://localhost:8080
 ```
 
-**2.2. Instale as dependências e execute**
+**Instale as dependências e execute:**
 
 ```bash
 cd mini-erp-front
@@ -230,22 +306,60 @@ O frontend estará disponível em `http://localhost:3000`.
 
 ---
 
-## 🔌 Endpoints da API (Resumo)
+## 📸 Screenshots
 
-| Método | Endpoint | Descrição |
-|---|---|---|
-| `GET` | `/produtos` | Lista todos os produtos |
-| `POST` | `/produtos` | Cadastra novo produto |
-| `PUT` | `/produtos/{id}` | Atualiza um produto |
-| `DELETE` | `/produtos/{id}` | Remove um produto |
-| `GET` | `/pedidos` | Lista todos os pedidos |
-| `POST` | `/pedidos` | Cria um pedido (valida estoque e calcula total) |
-| `PATCH` | `/pedidos/{id}/pagar` | Avança pedido para `PAGO` |
-| `PATCH` | `/pedidos/{id}/cancelar` | Cancela pedido e restaura estoque |
-| `GET` | `/clientes` | Lista todos os clientes |
-| `POST` | `/clientes` | Cadastra novo cliente |
-| `GET` | `/categorias` | Lista todas as categorias |
-| `POST` | `/categorias` | Cadastra nova categoria |
+### Desktop
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Painel Geral de Métricas e Estoque</strong><br/><br/>
+      <img src="screenshots/desktop-dashboard.png" alt="Dashboard com métricas e alertas de estoque" width="100%"/>
+    </td>
+    <td align="center" width="50%">
+      <strong>Catálogo de Produtos e Ações</strong><br/><br/>
+      <img src="screenshots/desktop-produtos.png" alt="Catálogo de produtos com tabela e ações" width="100%"/>
+    </td>
+  </tr>
+</table>
+
+### Mobile
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <strong>Fluxo Responsivo de Emissão de Pedidos</strong><br/><br/>
+      <img src="screenshots/mobile-novo-pedido.png" alt="Emissão de pedidos em dispositivo móvel" width="80%"/>
+    </td>
+    <td align="center" width="50%">
+      <strong>Formulários Adaptados para Telas Pequenas</strong><br/><br/>
+      <img src="screenshots/mobile-novo-produto.png" alt="Formulário de produto em dispositivo móvel" width="80%"/>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🤖 Papel da IA vs. Foco Real do Projeto
+
+> Esta seção é fundamental para compreender as escolhas de engenharia e o que este projeto realmente demonstra.
+
+### Frontend — Aceleração Estratégica com IA
+
+O uso de Inteligência Artificial (Claude) foi **deliberadamente restrito** ao ecossistema de Frontend, atuando como ferramenta de **aceleração de prototipagem**, não de substituição de raciocínio técnico:
+
+- **Prototipagem ágil** de layouts, estrutura de componentes e páginas em Next.js e TypeScript.
+- **Consistência de temas** — aplicação coerente de tokens de cores e classes do Tailwind CSS v4 no Light e Dark Mode.
+- **Adaptação de responsividade** — conversão cirúrgica de tabelas desktop em mini-cards empilhados para dispositivos móveis com Shadcn/ui.
+
+### Backend — 100% Artesanal e o Principal Foco de Avaliação
+
+O verdadeiro coração técnico e diferencial deste projeto é o **Backend em Java Spring Boot**, desenvolvido de forma **completamente manual**, sem nenhuma assistência de IA, para demonstrar domínio sólido em:
+
+- **Regras de negócio complexas** — validação transacional de estoque com `@Transactional`, cálculo automático do valor total do pedido linha a linha, e estorno de estoque no cancelamento.
+- **Máquina de estados rigorosa** — um pedido só pode ser pago se estiver em `RASCUNHO`; um pedido já cancelado não pode ser cancelado novamente — tudo protegido por `BusinessException` com mensagens claras.
+- **Tratamento global de exceções** com `@RestControllerAdvice`, respondendo sempre com um `StandardError` padronizado (timestamp, status, mensagem) — **zero stack trace exposto** ao consumidor da API.
+- **Segurança arquitetural** — credenciais 100% externalizadas via variáveis de ambiente e CORS centralizado em `CorsConfig.java`, sem `@CrossOrigin` disperso nos controllers.
 
 ---
 
